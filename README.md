@@ -1,3 +1,3 @@
-# Futura-iOS
+# Coconut
 
-A description of this package.
+Coconut is a set of UIKit extensions allowed by Futura library.
