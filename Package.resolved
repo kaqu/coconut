@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Futura",
+        "repositoryURL": "https://github.com/miquido/futura.git",
+        "state": {
+          "branch": "feature/spm",
+          "revision": "5e5fd2eb62045eff3a10b42bbccdd184daf7ff56",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
