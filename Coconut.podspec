@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/kaqu/coconut.git", :tag => "#{s.version}" }
   s.source_files = "Sources/Coconut/*.swift"
 
+  s.dependency :git => "https://github.com/miquido/futura.git, :branch => "feature/spm"
 end
