@@ -2,6 +2,10 @@ import Futura
 import UIKit
 
 extension SignalConsumerAdapter where Subject: UILabel {
+    /// Text signal input
+    /// Assigning Signal to this property binds its output to subject property.
+    /// If you assign signal while there was already any assigned signal the previous one
+    /// will be replaced with new one.
     public var text: Signal<String>? {
         get {
             return bindingCache[cacheKey("title")] as? Signal<String>

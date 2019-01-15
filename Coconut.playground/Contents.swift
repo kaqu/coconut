@@ -27,14 +27,14 @@ class ViewController : UIViewController {
         textField.backgroundColor = .lightGray
         view.addSubview(textField)
         
-        button.signalInput[titleFor: .normal] = textField.signal.text
-        textField.signalInput.hidden =
-            button.signal.tap
+        button.signalIn[titleFor: .normal] = textField.signalOut.text
+        textField.signalIn.hidden =
+            button.signalOut.tap
                 .map { [weak textField] _ in !(textField?.isHidden ?? false) }
-        label.signalInput.text =
+        label.signalIn.text =
             merge(
-                textField.signal.text,
-                button.signal.tap
+                textField.signalOut.text,
+                button.signalOut.tap
                     .map { [weak textField] _ in textField?.text ?? "" }
                 )
                 .map { [weak textField] text in

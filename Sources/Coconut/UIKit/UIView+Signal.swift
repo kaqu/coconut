@@ -2,6 +2,10 @@ import Futura
 import UIKit
 
 extension SignalConsumerAdapter where Subject: UIView {
+    /// Hidden state (isHidden) signal input
+    /// Assigning Signal to this property binds its output to subject property.
+    /// If you assign signal while there was already any assigned signal the previous one
+    /// will be replaced with new one.
     public var hidden: Signal<Bool>? {
         get {
             return bindingCache[cacheKey("hidden")] as? Signal<Bool>

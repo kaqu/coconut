@@ -1,13 +1,15 @@
 import Foundation
 
-public protocol SignalProducer {
+/// SignalProducer is a type that can produce signal outputs.
+public protocol SignalProducer: class {
     associatedtype Subject
-    var signal: SignalProducerAdapter<Subject> { get }
+    /// Output signals access
+    var signalOut: SignalProducerAdapter<Subject> { get }
 }
 
 fileprivate var signalProducerAdapterKey: Int = 0
-public extension SignalProducer {
-    var signal: SignalProducerAdapter<Self> {
+public extension SignalProducer where Self: NSObject {
+    var signalOut: SignalProducerAdapter<Self> {
         get {
             if let adapter = objc_getAssociatedObject(self, &signalProducerAdapterKey) as? SignalProducerAdapter<Self> {
                 return adapter
@@ -23,6 +25,7 @@ public extension SignalProducer {
     }
 }
 
+/// SignalProducerAdapter allows easy extending and namespacing output signals.
 public final class SignalProducerAdapter<Subject> {
     internal let subject: Subject
     internal var bindingCache: [String: Any] = .init()
@@ -35,7 +38,5 @@ public final class SignalProducerAdapter<Subject> {
         return "\(Subject.self):\(string):Key"
     }
 }
-
-import class Foundation.NSObject
 
 extension NSObject: SignalProducer {}
