@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4082A1D221EE075500518C14 /* UIViewController+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082A1D121EE075500518C14 /* UIViewController+Signal.swift */; };
 		4082A1D721EE174C00518C14 /* URLSession+Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082A1D621EE174C00518C14 /* URLSession+Future.swift */; };
+		40BE081121EF935300E1A8D0 /* UIApplication+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE081021EF935300E1A8D0 /* UIApplication+Signal.swift */; };
+		40BE081321F0755400E1A8D0 /* UIDevice+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE081221F0755400E1A8D0 /* UIDevice+Signal.swift */; };
+		40BE083C21F086DA00E1A8D0 /* Coconut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE083B21F086DA00E1A8D0 /* Coconut.swift */; };
 		OBJ_100 /* OperationQueueWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* OperationQueueWorker.swift */; };
 		OBJ_101 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* Worker.swift */; };
 		OBJ_108 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* Package.swift */; };
@@ -57,6 +60,9 @@
 /* Begin PBXFileReference section */
 		4082A1D121EE075500518C14 /* UIViewController+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Signal.swift"; sourceTree = "<group>"; };
 		4082A1D621EE174C00518C14 /* URLSession+Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Future.swift"; sourceTree = "<group>"; };
+		40BE081021EF935300E1A8D0 /* UIApplication+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Signal.swift"; sourceTree = "<group>"; };
+		40BE081221F0755400E1A8D0 /* UIDevice+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Signal.swift"; sourceTree = "<group>"; };
+		40BE083B21F086DA00E1A8D0 /* Coconut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coconut.swift; sourceTree = "<group>"; };
 		"Coconut::Coconut::Product" /* Coconut.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Coconut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Futura::Futura::Product" /* Futura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Futura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* SignalConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalConsumer.swift; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 			children = (
 				OBJ_9 /* ClosureHolder.swift */,
 				OBJ_12 /* Swizzle.swift */,
+				40BE083B21F086DA00E1A8D0 /* Coconut.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -149,6 +156,8 @@
 				OBJ_18 /* UITextView+Signal.swift */,
 				OBJ_19 /* UIView+Signal.swift */,
 				4082A1D121EE075500518C14 /* UIViewController+Signal.swift */,
+				40BE081021EF935300E1A8D0 /* UIApplication+Signal.swift */,
+				40BE081221F0755400E1A8D0 /* UIDevice+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -237,7 +246,7 @@
 			path = Worker;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -247,7 +256,6 @@
 				OBJ_22 /* Dependencies */,
 				OBJ_50 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_50 /* Products */ = {
@@ -358,7 +366,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -392,10 +400,13 @@
 				OBJ_61 /* Swizzle.swift in Sources */,
 				OBJ_62 /* UIButton+Signal.swift in Sources */,
 				OBJ_63 /* UIControl+Signal.swift in Sources */,
+				40BE083C21F086DA00E1A8D0 /* Coconut.swift in Sources */,
 				OBJ_64 /* UILabel+Signal.swift in Sources */,
+				40BE081121EF935300E1A8D0 /* UIApplication+Signal.swift in Sources */,
 				OBJ_65 /* UITextField+Signal.swift in Sources */,
 				OBJ_66 /* UITextView+Signal.swift in Sources */,
 				OBJ_67 /* UIView+Signal.swift in Sources */,
+				40BE081321F0755400E1A8D0 /* UIDevice+Signal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
