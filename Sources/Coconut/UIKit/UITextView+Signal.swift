@@ -36,7 +36,7 @@ extension SignalProducerAdapter where Subject: UITextView {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var text: Signal<String> {
-        if let signal = bindingCache[cacheKey("textChange")] as? Emitter<String> {
+        if let signal = bindingCache[cacheKey("textChange")] as? Signal<String> {
             return signal
         } else {
             let emitter: Emitter<String> = .init()

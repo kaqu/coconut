@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4082A1D221EE075500518C14 /* UIViewController+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082A1D121EE075500518C14 /* UIViewController+Signal.swift */; };
 		4082A1D721EE174C00518C14 /* URLSession+Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082A1D621EE174C00518C14 /* URLSession+Future.swift */; };
+		408CF8CB21F0D0AB00F0F390 /* NotificationCenter+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408CF8CA21F0D0AB00F0F390 /* NotificationCenter+Signal.swift */; };
 		40BE081121EF935300E1A8D0 /* UIApplication+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE081021EF935300E1A8D0 /* UIApplication+Signal.swift */; };
 		40BE081321F0755400E1A8D0 /* UIDevice+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE081221F0755400E1A8D0 /* UIDevice+Signal.swift */; };
 		40BE083C21F086DA00E1A8D0 /* Coconut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE083B21F086DA00E1A8D0 /* Coconut.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		4082A1D121EE075500518C14 /* UIViewController+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Signal.swift"; sourceTree = "<group>"; };
 		4082A1D621EE174C00518C14 /* URLSession+Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Future.swift"; sourceTree = "<group>"; };
+		408CF8CA21F0D0AB00F0F390 /* NotificationCenter+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Signal.swift"; sourceTree = "<group>"; };
 		40BE081021EF935300E1A8D0 /* UIApplication+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Signal.swift"; sourceTree = "<group>"; };
 		40BE081221F0755400E1A8D0 /* UIDevice+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Signal.swift"; sourceTree = "<group>"; };
 		40BE083B21F086DA00E1A8D0 /* Coconut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coconut.swift; sourceTree = "<group>"; };
@@ -138,12 +140,13 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		4082A1D521EE170D00518C14 /* URLSession */ = {
+		408CF8C921F0D09600F0F390 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
 				4082A1D621EE174C00518C14 /* URLSession+Future.swift */,
+				408CF8CA21F0D0AB00F0F390 /* NotificationCenter+Signal.swift */,
 			);
-			path = URLSession;
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		OBJ_13 /* UIKit */ = {
@@ -278,10 +281,10 @@
 		OBJ_8 /* Coconut */ = {
 			isa = PBXGroup;
 			children = (
+				408CF8C921F0D09600F0F390 /* Foundation */,
 				4082A1D321EE16F400518C14 /* Signal */,
 				4082A1D421EE16FF00518C14 /* Support */,
 				OBJ_13 /* UIKit */,
-				4082A1D521EE170D00518C14 /* URLSession */,
 			);
 			name = Coconut;
 			path = Sources/Coconut;
@@ -403,6 +406,7 @@
 				40BE083C21F086DA00E1A8D0 /* Coconut.swift in Sources */,
 				OBJ_64 /* UILabel+Signal.swift in Sources */,
 				40BE081121EF935300E1A8D0 /* UIApplication+Signal.swift in Sources */,
+				408CF8CB21F0D0AB00F0F390 /* NotificationCenter+Signal.swift in Sources */,
 				OBJ_65 /* UITextField+Signal.swift in Sources */,
 				OBJ_66 /* UITextView+Signal.swift in Sources */,
 				OBJ_67 /* UIView+Signal.swift in Sources */,

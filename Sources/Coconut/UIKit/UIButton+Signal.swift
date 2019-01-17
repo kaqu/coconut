@@ -8,7 +8,7 @@ extension SignalProducerAdapter where Subject: UIButton {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var tap: Signal<Void> {
-        if let signal = bindingCache[cacheKey("tap")] as? Emitter<Void> {
+        if let signal = bindingCache[cacheKey("tap")] as? Signal<Void> {
             return signal
         } else {
             let emitter: Emitter<Void> = .init()
