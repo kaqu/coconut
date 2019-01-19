@@ -8,8 +8,8 @@ public extension URLSession {
     /// - Parameter request: A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on.
     /// - Returns: Future of call result. Succeds with any valid response or fails with URLSession error.
     /// - SeeAlso: `dataTask(with:)`
-    func dataTaskFuture(with request: URLRequest) -> Future<(URLResponse, Data?)> {
-        let promise: Promise<(URLResponse, Data?)> = .init()
+    func dataTaskFuture(with request: URLRequest) -> Future<(response: URLResponse, body: Data?)> {
+        let promise: Promise<(response: URLResponse, body: Data?)> = .init()
         dataTask(with: request) { data, response, error in
             if let error = error {
                 promise.break(with: error)

@@ -1,17 +1,12 @@
-//
-//  ArrayDiff.swift
-//  Coconut
-//
-//  Created by Kacper Kaliński on 19/01/2019.
-//
-
 import Foundation
 
-internal func diff<Element>(_ left: [[Element]], _ right: [[Element]], match: (Element, Element) -> Bool) -> (sectionsDiff: Int, insert: [IndexPath], update: [IndexPath], delete: [IndexPath]) {
-    let sectionsDiff = right.count - left.count
+internal typealias TableViewDiff = (sectionsDiff: SectionsDiff, insert: [IndexPath], update: [IndexPath], delete: [IndexPath])
+
+internal func tableViewDiff<Element>(_ left: [[Element]], _ right: [[Element]], match: (Element, Element) -> Bool) -> TableViewDiff {
+    let sectionsChange = right.count - left.count
     var insertions: [IndexPath] = []
-    if sectionsDiff > 0 {
-        ((right.count - sectionsDiff) ..< right.count).forEach { idx in
+    if sectionsChange > 0 {
+        ((right.count - sectionsChange) ..< right.count).forEach { idx in
             insertions.append(contentsOf:
                 right[idx].enumerated()
                     .map { IndexPath(row: $0.offset, section: idx) })
@@ -25,29 +20,35 @@ internal func diff<Element>(_ left: [[Element]], _ right: [[Element]], match: (E
             leftSection
                 .enumerated()
                 .filter { rightSection[safeIndex: $0.offset] == nil }
-                .map { $0.offset }
-                .map {
-                    return IndexPath(row: $0, section: index)
+                .map { IndexPath(row: $0.offset, section: index)
         })
         insertions.append(contentsOf:
             rightSection
                 .enumerated()
                 .filter { leftSection[safeIndex: $0.offset] == nil }
-                .map { $0.offset }
-                .map {
-                    return IndexPath(row: $0, section: index)
-                })
+                .map { IndexPath(row: $0.offset, section: index) })
         updates.append(contentsOf:
             leftSection
                 .enumerated()
                 .filter { rightSection[safeIndex: $0.offset] != nil && !match(rightSection[$0.offset], $0.element) }
-                .map { $0.offset }
-                .map { IndexPath(row: $0, section: index) })
+                .map { IndexPath(row: $0.offset, section: index) })
     }
-
+    let sectionsDiff: SectionsDiff
+    if sectionsChange > 0 {
+        sectionsDiff = .insert(IndexSet(left.count ..< (left.count + sectionsChange)))
+    } else if sectionsChange < 0 {
+        sectionsDiff = .delete(IndexSet((left.count + sectionsChange) ..< left.count))
+    } else {
+        sectionsDiff = .none
+    }
     return (sectionsDiff: sectionsDiff, insert: insertions, update: updates, delete: deletions)
 }
 
+internal enum SectionsDiff {
+    case none
+    case insert(IndexSet)
+    case delete(IndexSet)
+}
 extension Array {
     subscript(safeIndex index: Int) -> Element? {
         guard count > index else { return nil }

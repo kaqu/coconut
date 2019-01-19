@@ -1,7 +1,7 @@
 //: A UIKit based Playground for presenting user interface
 
-import Foundation
 import Coconut
+import Foundation
 import Futura
 import PlaygroundSupport
 import UIKit
@@ -13,24 +13,24 @@ class ViewController: UIViewController {
         cell.textLabel?.text = value
         return cell
     }
-    
+
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .white
-        
+
         let tableView: UITableView = .init()
         tableView.frame = .init(x: 0, y: 200, width: 400, height: 400)
         view.addSubview(tableView)
-        
+
         dataSource.setup(tableView: tableView)
-        
+
         dataSource.model =
             [
                 ["Section 1 - Row 1", "Section 1 - Row 2", "Section 1 - Row 3"],
                 ["Section 2 - Row 1"],
                 ["Section 3 - Row 1", "Section 3 - Row 2"],
-        ]
-        
+            ]
+
         dataSource.signalIn.model =
             timer.map { _ in
                 (0 ... arc4random_uniform(4)).map { section in
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                         return "Random \(section)-\(row) \(arc4random_uniform(3))"
                     }
                 }
-        }
+            }
 
         let button: UIButton = .init()
         button.frame = .init(x: 50, y: 50, width: 250, height: 50)
@@ -72,4 +72,4 @@ class ViewController: UIViewController {
     }
 }
 
- PlaygroundPage.current.liveView = ViewController()
+PlaygroundPage.current.liveView = ViewController()

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		404BA68421F35EB700E49EDF /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BA68321F35EB700E49EDF /* TableViewDataSource.swift */; };
-		4051E93F21F333A700BF4D62 /* ArrayDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051E93E21F333A700BF4D62 /* ArrayDiff.swift */; };
+		4051E93F21F333A700BF4D62 /* TableViewDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051E93E21F333A700BF4D62 /* TableViewDiff.swift */; };
 		OBJ_100 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Promise.swift */; };
 		OBJ_101 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Result.swift */; };
 		OBJ_102 /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Emitter.swift */; };
@@ -64,7 +64,7 @@
 
 /* Begin PBXFileReference section */
 		404BA68321F35EB700E49EDF /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		4051E93E21F333A700BF4D62 /* ArrayDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDiff.swift; sourceTree = "<group>"; };
+		4051E93E21F333A700BF4D62 /* TableViewDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDiff.swift; sourceTree = "<group>"; };
 		"Coconut::Coconut::Product" /* Coconut.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Coconut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Futura::Futura::Product" /* Futura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Futura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* NotificationCenter+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Signal.swift"; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				OBJ_16 /* ClosureHolder.swift */,
 				OBJ_17 /* Coconut.swift */,
 				OBJ_18 /* Swizzle.swift */,
-				4051E93E21F333A700BF4D62 /* ArrayDiff.swift */,
+				4051E93E21F333A700BF4D62 /* TableViewDiff.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -409,7 +409,7 @@
 			files = (
 				OBJ_69 /* NotificationCenter+Signal.swift in Sources */,
 				OBJ_70 /* URLSession+Future.swift in Sources */,
-				4051E93F21F333A700BF4D62 /* ArrayDiff.swift in Sources */,
+				4051E93F21F333A700BF4D62 /* TableViewDiff.swift in Sources */,
 				OBJ_71 /* SignalConsumer.swift in Sources */,
 				OBJ_72 /* SignalProducer.swift in Sources */,
 				OBJ_73 /* ClosureHolder.swift in Sources */,
