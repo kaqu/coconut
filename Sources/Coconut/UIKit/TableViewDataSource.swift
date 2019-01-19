@@ -8,7 +8,7 @@
 import Futura
 import UIKit
 
-fileprivate let reusableCellIdentifier: String = "coconut.reusableCell"
+fileprivate let reusableCellIdentifier: String = "coconut.table.cell.reusable"
 
 /// Simple UITableViewDataSource and TableViewDataSourceProtocol implementation with auto diffing and signals support.
 public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, UITableViewDataSource, TableViewDataSourceProtocol {
@@ -30,16 +30,11 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
             updateFuture?.cancel()
             updateFuture =
                 future(on: updateQueue) { () -> Update in
-                    Mutex.lock(self.mtx)
-                    defer { Mutex.unlock(self.mtx) }
-                    return (model: newValue, diff: tableViewDiff(self._model, newValue, match: self.elementMatch))
+                    return (model: newValue, diff: tableViewDiff(self.model, newValue, match: self.elementMatch))
                 }
                 .switch(to: DispatchQueue.main)
                 .value { update in
-                    Mutex.lock(self.mtx)
-                    defer { Mutex.unlock(self.mtx) }
-                    self._model = update.model
-                    self.updateTableViewWith(diff: update.diff)
+                    self.updateTableViewWith(diff: update.diff, currentModel: update.model)
                 }
         }
     }
@@ -110,27 +105,29 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
     }
 
     public func numberOfSections(in _: UITableView) -> Int {
-        let model = self.model
-        return model.count
+        return _model.count
     }
 
     public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let model = self.model
-        guard model.count > section else { return 0 }
-        return model[section].count
+        guard _model.count > section else { return 0 }
+        return _model[section].count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = self.model
-        guard model.count > indexPath.section else { return UITableViewCell() }
-        guard model[indexPath.section].count > indexPath.row else { return UITableViewCell() }
+        guard _model.count > indexPath.section else { return UITableViewCell() }
+        guard _model[indexPath.section].count > indexPath.row else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath)
-        return cellSetup(model[indexPath.section][indexPath.row], cell)
+        return cellSetup(_model[indexPath.section][indexPath.row], cell)
     }
 
-    private func updateTableViewWith(diff: TableViewDiff) {
+    private func updateTableViewWith(diff: TableViewDiff, currentModel model: Model) {
+        dispatchPrecondition(condition: .onQueue(.main))
         guard let tableView = tableView else { return }
         let (sectionDiff, inserts, updates, deletes) = diff
+        Mutex.lock(self.mtx)
+        defer { Mutex.unlock(self.mtx) }
+        self._model = model
+        guard tableView.window != nil else { return tableView.reloadData() }
         tableView.performBatchUpdates({
             switch sectionDiff {
                 case .none: break
@@ -148,7 +145,6 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
             if !inserts.isEmpty {
                 tableView.insertRows(at: inserts, with: .automatic)
             } else { /* nothing */ }
-            
         })
     }
 }
