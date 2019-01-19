@@ -10,7 +10,7 @@ let package = Package(
             targets: ["Coconut"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/miquido/futura.git", .branch("feature/spm")),
+        .package(url: "https://github.com/miquido/futura.git", from: "2.1.0"),
     ],
     targets: [
         .target(

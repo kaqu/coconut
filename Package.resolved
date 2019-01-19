@@ -5,9 +5,9 @@
         "package": "Futura",
         "repositoryURL": "https://github.com/miquido/futura.git",
         "state": {
-          "branch": "feature/spm",
-          "revision": "5e5fd2eb62045eff3a10b42bbccdd184daf7ff56",
-          "version": null
+          "branch": null,
+          "revision": "2c2e1d82c4c1e9a454c55174033cb86db9a3d8d7",
+          "version": "2.1.0"
         }
       }
     ]

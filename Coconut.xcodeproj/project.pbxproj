@@ -7,49 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4082A1D221EE075500518C14 /* UIViewController+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082A1D121EE075500518C14 /* UIViewController+Signal.swift */; };
-		4082A1D721EE174C00518C14 /* URLSession+Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082A1D621EE174C00518C14 /* URLSession+Future.swift */; };
-		408CF8CB21F0D0AB00F0F390 /* NotificationCenter+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408CF8CA21F0D0AB00F0F390 /* NotificationCenter+Signal.swift */; };
-		40BE081121EF935300E1A8D0 /* UIApplication+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE081021EF935300E1A8D0 /* UIApplication+Signal.swift */; };
-		40BE081321F0755400E1A8D0 /* UIDevice+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE081221F0755400E1A8D0 /* UIDevice+Signal.swift */; };
-		40BE083C21F086DA00E1A8D0 /* Coconut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE083B21F086DA00E1A8D0 /* Coconut.swift */; };
-		OBJ_100 /* OperationQueueWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* OperationQueueWorker.swift */; };
-		OBJ_101 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* Worker.swift */; };
-		OBJ_108 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* Package.swift */; };
-		OBJ_58 /* ClosureHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* ClosureHolder.swift */; };
-		OBJ_59 /* SignalConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* SignalConsumer.swift */; };
-		OBJ_60 /* SignalProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SignalProducer.swift */; };
-		OBJ_61 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Swizzle.swift */; };
-		OBJ_62 /* UIButton+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* UIButton+Signal.swift */; };
-		OBJ_63 /* UIControl+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* UIControl+Signal.swift */; };
-		OBJ_64 /* UILabel+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* UILabel+Signal.swift */; };
-		OBJ_65 /* UITextField+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* UITextField+Signal.swift */; };
-		OBJ_66 /* UITextView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* UITextView+Signal.swift */; };
-		OBJ_67 /* UIView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* UIView+Signal.swift */; };
-		OBJ_69 /* Futura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Futura::Futura::Product" /* Futura.framework */; };
-		OBJ_77 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_82 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Future.swift */; };
-		OBJ_83 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Promise.swift */; };
-		OBJ_84 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Result.swift */; };
-		OBJ_85 /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* Emitter.swift */; };
-		OBJ_86 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Signal.swift */; };
-		OBJ_87 /* SignalFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* SignalFilter.swift */; };
-		OBJ_88 /* SignalFlatMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* SignalFlatMapper.swift */; };
-		OBJ_89 /* SignalForwarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* SignalForwarder.swift */; };
-		OBJ_90 /* SignalFutureFlatMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* SignalFutureFlatMapper.swift */; };
-		OBJ_91 /* SignalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* SignalMapper.swift */; };
-		OBJ_92 /* SignalMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* SignalMerger.swift */; };
-		OBJ_93 /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* SignalScheduler.swift */; };
-		OBJ_94 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Subscription.swift */; };
-		OBJ_95 /* SubscriptionCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* SubscriptionCollector.swift */; };
-		OBJ_96 /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* Mutex.swift */; };
-		OBJ_97 /* RecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* RecursiveLock.swift */; };
-		OBJ_98 /* DispatchQueueWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* DispatchQueueWorker.swift */; };
-		OBJ_99 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* ExecutionContext.swift */; };
+		404BA68421F35EB700E49EDF /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BA68321F35EB700E49EDF /* TableViewDataSource.swift */; };
+		4051E93F21F333A700BF4D62 /* ArrayDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051E93E21F333A700BF4D62 /* ArrayDiff.swift */; };
+		OBJ_100 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Promise.swift */; };
+		OBJ_101 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Result.swift */; };
+		OBJ_102 /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Emitter.swift */; };
+		OBJ_103 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Signal.swift */; };
+		OBJ_104 /* SignalErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* SignalErrorCatcher.swift */; };
+		OBJ_105 /* SignalFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* SignalFilter.swift */; };
+		OBJ_106 /* SignalFlatMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* SignalFlatMapper.swift */; };
+		OBJ_107 /* SignalForwarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* SignalForwarder.swift */; };
+		OBJ_108 /* SignalFutureFlatMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* SignalFutureFlatMapper.swift */; };
+		OBJ_109 /* SignalMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* SignalMapper.swift */; };
+		OBJ_110 /* SignalMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* SignalMerger.swift */; };
+		OBJ_111 /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* SignalScheduler.swift */; };
+		OBJ_112 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* Subscription.swift */; };
+		OBJ_113 /* SubscriptionCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* SubscriptionCollector.swift */; };
+		OBJ_114 /* TimedEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* TimedEmitter.swift */; };
+		OBJ_115 /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* Mutex.swift */; };
+		OBJ_116 /* RecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* RecursiveLock.swift */; };
+		OBJ_117 /* DispatchQueueWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* DispatchQueueWorker.swift */; };
+		OBJ_118 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* ExecutionContext.swift */; };
+		OBJ_119 /* OperationQueueWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* OperationQueueWorker.swift */; };
+		OBJ_120 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* Worker.swift */; };
+		OBJ_127 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* Package.swift */; };
+		OBJ_69 /* NotificationCenter+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* NotificationCenter+Signal.swift */; };
+		OBJ_70 /* URLSession+Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* URLSession+Future.swift */; };
+		OBJ_71 /* SignalConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* SignalConsumer.swift */; };
+		OBJ_72 /* SignalProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* SignalProducer.swift */; };
+		OBJ_73 /* ClosureHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* ClosureHolder.swift */; };
+		OBJ_74 /* Coconut.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Coconut.swift */; };
+		OBJ_75 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Swizzle.swift */; };
+		OBJ_76 /* UIApplication+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* UIApplication+Signal.swift */; };
+		OBJ_77 /* UIButton+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* UIButton+Signal.swift */; };
+		OBJ_78 /* UIControl+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* UIControl+Signal.swift */; };
+		OBJ_79 /* UIDevice+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* UIDevice+Signal.swift */; };
+		OBJ_80 /* UILabel+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* UILabel+Signal.swift */; };
+		OBJ_81 /* UITextField+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* UITextField+Signal.swift */; };
+		OBJ_82 /* UITextView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* UITextView+Signal.swift */; };
+		OBJ_83 /* UIView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* UIView+Signal.swift */; };
+		OBJ_84 /* UIViewController+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* UIViewController+Signal.swift */; };
+		OBJ_86 /* Futura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Futura::Futura::Product" /* Futura.framework */; };
+		OBJ_94 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_99 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* Future.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4082A1D021EE007400518C14 /* PBXContainerItemProxy */ = {
+		406F4A3521F118EA005B43B2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -59,194 +63,173 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4082A1D121EE075500518C14 /* UIViewController+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Signal.swift"; sourceTree = "<group>"; };
-		4082A1D621EE174C00518C14 /* URLSession+Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Future.swift"; sourceTree = "<group>"; };
-		408CF8CA21F0D0AB00F0F390 /* NotificationCenter+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Signal.swift"; sourceTree = "<group>"; };
-		40BE081021EF935300E1A8D0 /* UIApplication+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Signal.swift"; sourceTree = "<group>"; };
-		40BE081221F0755400E1A8D0 /* UIDevice+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Signal.swift"; sourceTree = "<group>"; };
-		40BE083B21F086DA00E1A8D0 /* Coconut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coconut.swift; sourceTree = "<group>"; };
+		404BA68321F35EB700E49EDF /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		4051E93E21F333A700BF4D62 /* ArrayDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDiff.swift; sourceTree = "<group>"; };
 		"Coconut::Coconut::Product" /* Coconut.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Coconut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Futura::Futura::Product" /* Futura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Futura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_10 /* SignalConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalConsumer.swift; sourceTree = "<group>"; };
-		OBJ_11 /* SignalProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalProducer.swift; sourceTree = "<group>"; };
-		OBJ_12 /* Swizzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
-		OBJ_14 /* UIButton+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Signal.swift"; sourceTree = "<group>"; };
-		OBJ_15 /* UIControl+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Signal.swift"; sourceTree = "<group>"; };
-		OBJ_16 /* UILabel+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Signal.swift"; sourceTree = "<group>"; };
-		OBJ_17 /* UITextField+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Signal.swift"; sourceTree = "<group>"; };
-		OBJ_18 /* UITextView+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Signal.swift"; sourceTree = "<group>"; };
-		OBJ_19 /* UIView+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Signal.swift"; sourceTree = "<group>"; };
-		OBJ_21 /* Coconut.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Coconut.xcworkspace; sourceTree = SOURCE_ROOT; };
-		OBJ_26 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
-		OBJ_27 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
-		OBJ_28 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		OBJ_30 /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
-		OBJ_31 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
-		OBJ_32 /* SignalFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalFilter.swift; sourceTree = "<group>"; };
-		OBJ_33 /* SignalFlatMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalFlatMapper.swift; sourceTree = "<group>"; };
-		OBJ_34 /* SignalForwarder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalForwarder.swift; sourceTree = "<group>"; };
-		OBJ_35 /* SignalFutureFlatMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalFutureFlatMapper.swift; sourceTree = "<group>"; };
-		OBJ_36 /* SignalMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalMapper.swift; sourceTree = "<group>"; };
-		OBJ_37 /* SignalMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalMerger.swift; sourceTree = "<group>"; };
-		OBJ_38 /* SignalScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
-		OBJ_39 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
-		OBJ_40 /* SubscriptionCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCollector.swift; sourceTree = "<group>"; };
-		OBJ_42 /* Mutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutex.swift; sourceTree = "<group>"; };
-		OBJ_43 /* RecursiveLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveLock.swift; sourceTree = "<group>"; };
-		OBJ_45 /* DispatchQueueWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueWorker.swift; sourceTree = "<group>"; };
-		OBJ_46 /* ExecutionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionContext.swift; sourceTree = "<group>"; };
-		OBJ_47 /* OperationQueueWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueWorker.swift; sourceTree = "<group>"; };
-		OBJ_48 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
-		OBJ_49 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/kaqu/Miquido/Projects/Futura-iOS/.build/checkouts/futura.git-8160257967924088271/Package.swift"; sourceTree = "<group>"; };
+		OBJ_10 /* NotificationCenter+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_11 /* URLSession+Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Future.swift"; sourceTree = "<group>"; };
+		OBJ_13 /* SignalConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalConsumer.swift; sourceTree = "<group>"; };
+		OBJ_14 /* SignalProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalProducer.swift; sourceTree = "<group>"; };
+		OBJ_16 /* ClosureHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureHolder.swift; sourceTree = "<group>"; };
+		OBJ_17 /* Coconut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coconut.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Swizzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
+		OBJ_20 /* UIApplication+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_21 /* UIButton+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_22 /* UIControl+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_23 /* UIDevice+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_24 /* UILabel+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_25 /* UITextField+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_26 /* UITextView+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_27 /* UIView+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_28 /* UIViewController+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Signal.swift"; sourceTree = "<group>"; };
+		OBJ_30 /* Coconut.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Coconut.xcworkspace; sourceTree = SOURCE_ROOT; };
+		OBJ_35 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		OBJ_36 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		OBJ_37 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		OBJ_39 /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
+		OBJ_40 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		OBJ_41 /* SignalErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalErrorCatcher.swift; sourceTree = "<group>"; };
+		OBJ_42 /* SignalFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalFilter.swift; sourceTree = "<group>"; };
+		OBJ_43 /* SignalFlatMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalFlatMapper.swift; sourceTree = "<group>"; };
+		OBJ_44 /* SignalForwarder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalForwarder.swift; sourceTree = "<group>"; };
+		OBJ_45 /* SignalFutureFlatMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalFutureFlatMapper.swift; sourceTree = "<group>"; };
+		OBJ_46 /* SignalMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalMapper.swift; sourceTree = "<group>"; };
+		OBJ_47 /* SignalMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalMerger.swift; sourceTree = "<group>"; };
+		OBJ_48 /* SignalScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
+		OBJ_49 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		OBJ_50 /* SubscriptionCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCollector.swift; sourceTree = "<group>"; };
+		OBJ_51 /* TimedEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedEmitter.swift; sourceTree = "<group>"; };
+		OBJ_53 /* Mutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutex.swift; sourceTree = "<group>"; };
+		OBJ_54 /* RecursiveLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveLock.swift; sourceTree = "<group>"; };
+		OBJ_56 /* DispatchQueueWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueWorker.swift; sourceTree = "<group>"; };
+		OBJ_57 /* ExecutionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionContext.swift; sourceTree = "<group>"; };
+		OBJ_58 /* OperationQueueWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueWorker.swift; sourceTree = "<group>"; };
+		OBJ_59 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* ClosureHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureHolder.swift; sourceTree = "<group>"; };
+		OBJ_60 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/kaqu/Miquido/Projects/Futura-iOS/.build/checkouts/futura.git-8160257967924088271/Package.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_102 /* Frameworks */ = {
+		OBJ_121 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_68 /* Frameworks */ = {
+		OBJ_85 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_69 /* Futura.framework in Frameworks */,
+				OBJ_86 /* Futura.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4082A1D321EE16F400518C14 /* Signal */ = {
+		OBJ_12 /* Signal */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_10 /* SignalConsumer.swift */,
-				OBJ_11 /* SignalProducer.swift */,
+				OBJ_13 /* SignalConsumer.swift */,
+				OBJ_14 /* SignalProducer.swift */,
 			);
 			path = Signal;
 			sourceTree = "<group>";
 		};
-		4082A1D421EE16FF00518C14 /* Support */ = {
+		OBJ_15 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* ClosureHolder.swift */,
-				OBJ_12 /* Swizzle.swift */,
-				40BE083B21F086DA00E1A8D0 /* Coconut.swift */,
+				OBJ_16 /* ClosureHolder.swift */,
+				OBJ_17 /* Coconut.swift */,
+				OBJ_18 /* Swizzle.swift */,
+				4051E93E21F333A700BF4D62 /* ArrayDiff.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
 		};
-		408CF8C921F0D09600F0F390 /* Foundation */ = {
+		OBJ_19 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				4082A1D621EE174C00518C14 /* URLSession+Future.swift */,
-				408CF8CA21F0D0AB00F0F390 /* NotificationCenter+Signal.swift */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		OBJ_13 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_14 /* UIButton+Signal.swift */,
-				OBJ_15 /* UIControl+Signal.swift */,
-				OBJ_16 /* UILabel+Signal.swift */,
-				OBJ_17 /* UITextField+Signal.swift */,
-				OBJ_18 /* UITextView+Signal.swift */,
-				OBJ_19 /* UIView+Signal.swift */,
-				4082A1D121EE075500518C14 /* UIViewController+Signal.swift */,
-				40BE081021EF935300E1A8D0 /* UIApplication+Signal.swift */,
-				40BE081221F0755400E1A8D0 /* UIDevice+Signal.swift */,
+				OBJ_20 /* UIApplication+Signal.swift */,
+				OBJ_21 /* UIButton+Signal.swift */,
+				OBJ_22 /* UIControl+Signal.swift */,
+				OBJ_23 /* UIDevice+Signal.swift */,
+				OBJ_24 /* UILabel+Signal.swift */,
+				OBJ_25 /* UITextField+Signal.swift */,
+				OBJ_26 /* UITextView+Signal.swift */,
+				OBJ_27 /* UIView+Signal.swift */,
+				OBJ_28 /* UIViewController+Signal.swift */,
+				404BA68321F35EB700E49EDF /* TableViewDataSource.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		OBJ_20 /* Tests */ = {
+		OBJ_29 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_22 /* Dependencies */ = {
+		OBJ_31 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* Futura */,
+				OBJ_32 /* Futura */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		OBJ_23 /* Futura */ = {
+		OBJ_32 /* Futura */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_24 /* Futura */,
-				OBJ_49 /* Package.swift */,
+				OBJ_33 /* Futura */,
+				OBJ_60 /* Package.swift */,
 			);
 			name = Futura;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_24 /* Futura */ = {
+		OBJ_33 /* Futura */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_25 /* Future */,
-				OBJ_28 /* Result.swift */,
-				OBJ_29 /* Signal */,
-				OBJ_41 /* Synchronization */,
-				OBJ_44 /* Worker */,
+				OBJ_34 /* Future */,
+				OBJ_37 /* Result.swift */,
+				OBJ_38 /* Signal */,
+				OBJ_52 /* Synchronization */,
+				OBJ_55 /* Worker */,
 			);
 			name = Futura;
 			path = ".build/checkouts/futura.git-8160257967924088271/Sources/Futura";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_25 /* Future */ = {
+		OBJ_34 /* Future */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_26 /* Future.swift */,
-				OBJ_27 /* Promise.swift */,
+				OBJ_35 /* Future.swift */,
+				OBJ_36 /* Promise.swift */,
 			);
 			path = Future;
 			sourceTree = "<group>";
 		};
-		OBJ_29 /* Signal */ = {
+		OBJ_38 /* Signal */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_30 /* Emitter.swift */,
-				OBJ_31 /* Signal.swift */,
-				OBJ_32 /* SignalFilter.swift */,
-				OBJ_33 /* SignalFlatMapper.swift */,
-				OBJ_34 /* SignalForwarder.swift */,
-				OBJ_35 /* SignalFutureFlatMapper.swift */,
-				OBJ_36 /* SignalMapper.swift */,
-				OBJ_37 /* SignalMerger.swift */,
-				OBJ_38 /* SignalScheduler.swift */,
-				OBJ_39 /* Subscription.swift */,
-				OBJ_40 /* SubscriptionCollector.swift */,
+				OBJ_39 /* Emitter.swift */,
+				OBJ_40 /* Signal.swift */,
+				OBJ_41 /* SignalErrorCatcher.swift */,
+				OBJ_42 /* SignalFilter.swift */,
+				OBJ_43 /* SignalFlatMapper.swift */,
+				OBJ_44 /* SignalForwarder.swift */,
+				OBJ_45 /* SignalFutureFlatMapper.swift */,
+				OBJ_46 /* SignalMapper.swift */,
+				OBJ_47 /* SignalMerger.swift */,
+				OBJ_48 /* SignalScheduler.swift */,
+				OBJ_49 /* Subscription.swift */,
+				OBJ_50 /* SubscriptionCollector.swift */,
+				OBJ_51 /* TimedEmitter.swift */,
 			);
 			path = Signal;
-			sourceTree = "<group>";
-		};
-		OBJ_41 /* Synchronization */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_42 /* Mutex.swift */,
-				OBJ_43 /* RecursiveLock.swift */,
-			);
-			path = Synchronization;
-			sourceTree = "<group>";
-		};
-		OBJ_44 /* Worker */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_45 /* DispatchQueueWorker.swift */,
-				OBJ_46 /* ExecutionContext.swift */,
-				OBJ_47 /* OperationQueueWorker.swift */,
-				OBJ_48 /* Worker.swift */,
-			);
-			path = Worker;
 			sourceTree = "<group>";
 		};
 		OBJ_5 = {
@@ -254,14 +237,34 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_20 /* Tests */,
-				OBJ_21 /* Coconut.xcworkspace */,
-				OBJ_22 /* Dependencies */,
-				OBJ_50 /* Products */,
+				OBJ_29 /* Tests */,
+				OBJ_30 /* Coconut.xcworkspace */,
+				OBJ_31 /* Dependencies */,
+				OBJ_61 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		OBJ_50 /* Products */ = {
+		OBJ_52 /* Synchronization */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_53 /* Mutex.swift */,
+				OBJ_54 /* RecursiveLock.swift */,
+			);
+			path = Synchronization;
+			sourceTree = "<group>";
+		};
+		OBJ_55 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_56 /* DispatchQueueWorker.swift */,
+				OBJ_57 /* ExecutionContext.swift */,
+				OBJ_58 /* OperationQueueWorker.swift */,
+				OBJ_59 /* Worker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		OBJ_61 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				"Coconut::Coconut::Product" /* Coconut.framework */,
@@ -281,29 +284,38 @@
 		OBJ_8 /* Coconut */ = {
 			isa = PBXGroup;
 			children = (
-				408CF8C921F0D09600F0F390 /* Foundation */,
-				4082A1D321EE16F400518C14 /* Signal */,
-				4082A1D421EE16FF00518C14 /* Support */,
-				OBJ_13 /* UIKit */,
+				OBJ_9 /* Foundation */,
+				OBJ_12 /* Signal */,
+				OBJ_15 /* Support */,
+				OBJ_19 /* UIKit */,
 			);
 			name = Coconut;
 			path = Sources/Coconut;
 			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_10 /* NotificationCenter+Signal.swift */,
+				OBJ_11 /* URLSession+Future.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		"Coconut::Coconut" /* Coconut */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_54 /* Build configuration list for PBXNativeTarget "Coconut" */;
+			buildConfigurationList = OBJ_65 /* Build configuration list for PBXNativeTarget "Coconut" */;
 			buildPhases = (
-				OBJ_57 /* Sources */,
-				OBJ_68 /* Frameworks */,
+				OBJ_68 /* Sources */,
+				OBJ_85 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_70 /* PBXTargetDependency */,
+				OBJ_87 /* PBXTargetDependency */,
 			);
 			name = Coconut;
 			productName = Coconut;
@@ -312,9 +324,9 @@
 		};
 		"Coconut::SwiftPMPackageDescription" /* CoconutPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_73 /* Build configuration list for PBXNativeTarget "CoconutPackageDescription" */;
+			buildConfigurationList = OBJ_90 /* Build configuration list for PBXNativeTarget "CoconutPackageDescription" */;
 			buildPhases = (
-				OBJ_76 /* Sources */,
+				OBJ_93 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -326,10 +338,10 @@
 		};
 		"Futura::Futura" /* Futura */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_78 /* Build configuration list for PBXNativeTarget "Futura" */;
+			buildConfigurationList = OBJ_95 /* Build configuration list for PBXNativeTarget "Futura" */;
 			buildPhases = (
-				OBJ_81 /* Sources */,
-				OBJ_102 /* Frameworks */,
+				OBJ_98 /* Sources */,
+				OBJ_121 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,9 +354,9 @@
 		};
 		"Futura::SwiftPMPackageDescription" /* FuturaPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_104 /* Build configuration list for PBXNativeTarget "FuturaPackageDescription" */;
+			buildConfigurationList = OBJ_123 /* Build configuration list for PBXNativeTarget "FuturaPackageDescription" */;
 			buildPhases = (
-				OBJ_107 /* Sources */,
+				OBJ_126 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -370,7 +382,7 @@
 				en,
 			);
 			mainGroup = OBJ_5;
-			productRefGroup = OBJ_50 /* Products */;
+			productRefGroup = OBJ_61 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -383,84 +395,88 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_107 /* Sources */ = {
+		OBJ_126 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_108 /* Package.swift in Sources */,
+				OBJ_127 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_57 /* Sources */ = {
+		OBJ_68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				4082A1D221EE075500518C14 /* UIViewController+Signal.swift in Sources */,
-				OBJ_58 /* ClosureHolder.swift in Sources */,
-				OBJ_59 /* SignalConsumer.swift in Sources */,
-				4082A1D721EE174C00518C14 /* URLSession+Future.swift in Sources */,
-				OBJ_60 /* SignalProducer.swift in Sources */,
-				OBJ_61 /* Swizzle.swift in Sources */,
-				OBJ_62 /* UIButton+Signal.swift in Sources */,
-				OBJ_63 /* UIControl+Signal.swift in Sources */,
-				40BE083C21F086DA00E1A8D0 /* Coconut.swift in Sources */,
-				OBJ_64 /* UILabel+Signal.swift in Sources */,
-				40BE081121EF935300E1A8D0 /* UIApplication+Signal.swift in Sources */,
-				408CF8CB21F0D0AB00F0F390 /* NotificationCenter+Signal.swift in Sources */,
-				OBJ_65 /* UITextField+Signal.swift in Sources */,
-				OBJ_66 /* UITextView+Signal.swift in Sources */,
-				OBJ_67 /* UIView+Signal.swift in Sources */,
-				40BE081321F0755400E1A8D0 /* UIDevice+Signal.swift in Sources */,
+				OBJ_69 /* NotificationCenter+Signal.swift in Sources */,
+				OBJ_70 /* URLSession+Future.swift in Sources */,
+				4051E93F21F333A700BF4D62 /* ArrayDiff.swift in Sources */,
+				OBJ_71 /* SignalConsumer.swift in Sources */,
+				OBJ_72 /* SignalProducer.swift in Sources */,
+				OBJ_73 /* ClosureHolder.swift in Sources */,
+				OBJ_74 /* Coconut.swift in Sources */,
+				OBJ_75 /* Swizzle.swift in Sources */,
+				OBJ_76 /* UIApplication+Signal.swift in Sources */,
+				OBJ_77 /* UIButton+Signal.swift in Sources */,
+				OBJ_78 /* UIControl+Signal.swift in Sources */,
+				OBJ_79 /* UIDevice+Signal.swift in Sources */,
+				OBJ_80 /* UILabel+Signal.swift in Sources */,
+				OBJ_81 /* UITextField+Signal.swift in Sources */,
+				OBJ_82 /* UITextView+Signal.swift in Sources */,
+				OBJ_83 /* UIView+Signal.swift in Sources */,
+				404BA68421F35EB700E49EDF /* TableViewDataSource.swift in Sources */,
+				OBJ_84 /* UIViewController+Signal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_76 /* Sources */ = {
+		OBJ_93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_77 /* Package.swift in Sources */,
+				OBJ_94 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_81 /* Sources */ = {
+		OBJ_98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_82 /* Future.swift in Sources */,
-				OBJ_83 /* Promise.swift in Sources */,
-				OBJ_84 /* Result.swift in Sources */,
-				OBJ_85 /* Emitter.swift in Sources */,
-				OBJ_86 /* Signal.swift in Sources */,
-				OBJ_87 /* SignalFilter.swift in Sources */,
-				OBJ_88 /* SignalFlatMapper.swift in Sources */,
-				OBJ_89 /* SignalForwarder.swift in Sources */,
-				OBJ_90 /* SignalFutureFlatMapper.swift in Sources */,
-				OBJ_91 /* SignalMapper.swift in Sources */,
-				OBJ_92 /* SignalMerger.swift in Sources */,
-				OBJ_93 /* SignalScheduler.swift in Sources */,
-				OBJ_94 /* Subscription.swift in Sources */,
-				OBJ_95 /* SubscriptionCollector.swift in Sources */,
-				OBJ_96 /* Mutex.swift in Sources */,
-				OBJ_97 /* RecursiveLock.swift in Sources */,
-				OBJ_98 /* DispatchQueueWorker.swift in Sources */,
-				OBJ_99 /* ExecutionContext.swift in Sources */,
-				OBJ_100 /* OperationQueueWorker.swift in Sources */,
-				OBJ_101 /* Worker.swift in Sources */,
+				OBJ_99 /* Future.swift in Sources */,
+				OBJ_100 /* Promise.swift in Sources */,
+				OBJ_101 /* Result.swift in Sources */,
+				OBJ_102 /* Emitter.swift in Sources */,
+				OBJ_103 /* Signal.swift in Sources */,
+				OBJ_104 /* SignalErrorCatcher.swift in Sources */,
+				OBJ_105 /* SignalFilter.swift in Sources */,
+				OBJ_106 /* SignalFlatMapper.swift in Sources */,
+				OBJ_107 /* SignalForwarder.swift in Sources */,
+				OBJ_108 /* SignalFutureFlatMapper.swift in Sources */,
+				OBJ_109 /* SignalMapper.swift in Sources */,
+				OBJ_110 /* SignalMerger.swift in Sources */,
+				OBJ_111 /* SignalScheduler.swift in Sources */,
+				OBJ_112 /* Subscription.swift in Sources */,
+				OBJ_113 /* SubscriptionCollector.swift in Sources */,
+				OBJ_114 /* TimedEmitter.swift in Sources */,
+				OBJ_115 /* Mutex.swift in Sources */,
+				OBJ_116 /* RecursiveLock.swift in Sources */,
+				OBJ_117 /* DispatchQueueWorker.swift in Sources */,
+				OBJ_118 /* ExecutionContext.swift in Sources */,
+				OBJ_119 /* OperationQueueWorker.swift in Sources */,
+				OBJ_120 /* Worker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_70 /* PBXTargetDependency */ = {
+		OBJ_87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Futura::Futura" /* Futura */;
-			targetProxy = 4082A1D021EE007400518C14 /* PBXContainerItemProxy */;
+			targetProxy = 406F4A3521F118EA005B43B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_105 /* Debug */ = {
+		OBJ_124 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -469,7 +485,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_106 /* Release */ = {
+		OBJ_125 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -524,7 +540,7 @@
 			};
 			name = Release;
 		};
-		OBJ_55 /* Debug */ = {
+		OBJ_66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -548,7 +564,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_56 /* Release */ = {
+		OBJ_67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -572,7 +588,7 @@
 			};
 			name = Release;
 		};
-		OBJ_74 /* Debug */ = {
+		OBJ_91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -581,7 +597,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_75 /* Release */ = {
+		OBJ_92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -590,7 +606,7 @@
 			};
 			name = Release;
 		};
-		OBJ_79 /* Debug */ = {
+		OBJ_96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -614,7 +630,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_80 /* Release */ = {
+		OBJ_97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -641,11 +657,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_104 /* Build configuration list for PBXNativeTarget "FuturaPackageDescription" */ = {
+		OBJ_123 /* Build configuration list for PBXNativeTarget "FuturaPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_105 /* Debug */,
-				OBJ_106 /* Release */,
+				OBJ_124 /* Debug */,
+				OBJ_125 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -659,29 +675,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_54 /* Build configuration list for PBXNativeTarget "Coconut" */ = {
+		OBJ_65 /* Build configuration list for PBXNativeTarget "Coconut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_55 /* Debug */,
-				OBJ_56 /* Release */,
+				OBJ_66 /* Debug */,
+				OBJ_67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_73 /* Build configuration list for PBXNativeTarget "CoconutPackageDescription" */ = {
+		OBJ_90 /* Build configuration list for PBXNativeTarget "CoconutPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_74 /* Debug */,
-				OBJ_75 /* Release */,
+				OBJ_91 /* Debug */,
+				OBJ_92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_78 /* Build configuration list for PBXNativeTarget "Futura" */ = {
+		OBJ_95 /* Build configuration list for PBXNativeTarget "Futura" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_79 /* Debug */,
-				OBJ_80 /* Release */,
+				OBJ_96 /* Debug */,
+				OBJ_97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
