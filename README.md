@@ -13,21 +13,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let button: UIButton = .init()
-        button.frame = .init(x: 50, y: 50, width: 250, height: 80)
-        button.setTitle("BUTTON", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        view.addSubview(button)
-
         let label: UILabel = .init()
-        label.frame = .init(x: 50, y: 150, width: 250, height: 80)
-        label.text = "LABEL"
-        view.addSubview(label)
-
         let textField: UITextField = .init()
-        textField.frame = .init(x: 50, y: 350, width: 250, height: 80)
-        textField.text = "TEXT FIELD"
-        textField.backgroundColor = .lightGray
-        view.addSubview(textField)
+
+        /*...*/
 
         button.signalInput[titleFor: .normal] = textField.signal.text
         textField.signalInput.hidden =
@@ -45,6 +34,42 @@ class ViewController: UIViewController {
     }
 }
 
+```
+
+Simple to use TableViewDataSource with auto diffing and signal support.
+
+``` swift
+class ViewController: UIViewController {
+    let timer: TimedEmitter = .init(interval: 3)
+    var dataSource: TableViewDataSource<String> = .init { (value) -> UITableViewCell in
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = value
+        return cell
+    }
+
+    override func loadView() {
+        let tableView: UITableView = .init()
+        view = tableView
+
+        dataSource.setup(tableView: tableView)
+
+        dataSource.model =
+            [
+                ["Section 1 - Row 1", "Section 1 - Row 2", "Section 1 - Row 3"],
+                ["Section 2 - Row 1"],
+                ["Section 3 - Row 1", "Section 3 - Row 2"],
+            ]
+
+        dataSource.signalIn.model =
+            timer.map { _ in
+                (0 ... arc4random_uniform(4)).map { section in
+                    (0 ... arc4random_uniform(20)).map { row in
+                        return "Random \(section)-\(row) \(arc4random_uniform(3))"
+                    }
+                }
+            }
+    }
+}
 ```
 
 UIApplication, UIDevice and NotificationCenter support.
