@@ -49,5 +49,30 @@ extension SignalProducerAdapter where Subject: UITextField {
             return emitter.signal
         }
     }
+    
+    /// Editing state changes (UIControl.Event.editingDidBegin/UIControl.Event.editingDidEnd) signal output
+    /// This signal lifetime is corresponding to its subject - if subject becomes deallocated signal will become ended.
+    ///
+    /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
+    /// unbind while subject is still alive.
+    public var editing: Signal<Bool> {
+        if let signal = bindingCache[cacheKey("editStateChange")] as? Signal<Bool> {
+            return signal
+        } else {
+            let emitter: Emitter<Bool> = .init()
+            let beginClosureHolder = ClosureHolder<UITextField>({ _ in
+                emitter.emit(true)
+            })
+            let endClosureHolder = ClosureHolder<UITextField>({ _ in
+                emitter.emit(true)
+            })
+            subject.addTarget(beginClosureHolder, action: #selector(ClosureHolder<UITextField>.invoke), for: .editingDidBegin)
+            subject.addTarget(endClosureHolder, action: #selector(ClosureHolder<UITextField>.invoke), for: .editingDidEnd)
+            bindingCache[cacheKey("editStateChange")] = emitter
+            bindingCache[cacheKey("editStateChangeBeginClosure")] = beginClosureHolder
+            bindingCache[cacheKey("editStateChangeEndClosure")] = endClosureHolder
+            return emitter.signal
+        }
+    }
 }
 

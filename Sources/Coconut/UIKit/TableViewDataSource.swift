@@ -25,17 +25,18 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
             return _model
         }
         set {
-            Mutex.lock(mtx)
-            defer { Mutex.unlock(mtx) }
-            updateFuture?.cancel()
-            updateFuture =
-                future(on: updateQueue) { () -> Update in
-                    return (model: newValue, diff: tableViewDiff(self.model, newValue, match: self.elementMatch))
+            future(on: updateQueue) { () -> Update in
+                defer {
+                    Mutex.lock(self.mtx)
+                    defer { Mutex.unlock(self.mtx) }
+                    self._model = newValue
                 }
-                .switch(to: DispatchQueue.main)
-                .value { update in
-                    self.updateTableViewWith(diff: update.diff, currentModel: update.model)
-                }
+                return (model: newValue, diff: tableViewDiff(self.model, newValue, match: self.elementMatch))
+            }
+            .switch(to: DispatchQueue.main)
+            .value { update in
+                self.updateTableViewWith(diff: update.diff, currentModel: update.model)
+            }
         }
     }
 
@@ -58,11 +59,11 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
 
     private var modelInputSignalCollector: SubscriptionCollector?
 
-    private var updateFuture: Future<Update>?
     private let updateQueue: DispatchQueue = .init(label: "coconut.table.update.queue", qos: .userInteractive)
 
     private let mtx: Mutex.Pointer = Mutex.make(recursive: true)
     private var _model: Model = []
+    private lazy var modelCache: Model = model
     private let elementMatch: (Element, Element) -> Bool
     private let cellSetup: (Element, UITableViewCell) -> UITableViewCell
     private let reusableCellClass: AnyClass
@@ -105,19 +106,19 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
     }
 
     public func numberOfSections(in _: UITableView) -> Int {
-        return _model.count
+        return modelCache.count
     }
 
     public func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard _model.count > section else { return 0 }
-        return _model[section].count
+        guard modelCache.count > section else { return 0 }
+        return modelCache[section].count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard _model.count > indexPath.section else { return UITableViewCell() }
-        guard _model[indexPath.section].count > indexPath.row else { return UITableViewCell() }
+        guard modelCache.count > indexPath.section else { return UITableViewCell() }
+        guard modelCache[indexPath.section].count > indexPath.row else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath)
-        return cellSetup(_model[indexPath.section][indexPath.row], cell)
+        return cellSetup(modelCache[indexPath.section][indexPath.row], cell)
     }
 
     private func updateTableViewWith(diff: TableViewDiff, currentModel model: Model) {
@@ -126,26 +127,32 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
         let (sectionDiff, inserts, updates, deletes) = diff
         Mutex.lock(self.mtx)
         defer { Mutex.unlock(self.mtx) }
-        self._model = model
-        guard tableView.window != nil else { return tableView.reloadData() }
-        tableView.performBatchUpdates({
-            switch sectionDiff {
-                case .none: break
-                case let .insert(indexSet):
-                    tableView.insertSections(indexSet, with: .automatic)
-                case let .delete(indexSet):
-                    tableView.deleteSections(indexSet, with: .automatic)
-            }
-            if !updates.isEmpty {
-                tableView.reloadRows(at: updates, with: .automatic)
-            } else { /* nothing */ }
-            if !deletes.isEmpty {
-                tableView.deleteRows(at: deletes, with: .automatic)
-            } else { /* nothing */ }
-            if !inserts.isEmpty {
-                tableView.insertRows(at: inserts, with: .automatic)
-            } else { /* nothing */ }
-        })
+        print("OLD:\n\(_model)\n\nNEW\n\(model)")
+        print("CHANGE\n\(diff)")
+
+        guard tableView.window != nil else {
+            self.modelCache = model
+            return tableView.reloadData()
+        }
+        tableView.beginUpdates()
+        self.modelCache = model
+        switch sectionDiff {
+            case .none: break
+            case let .insert(indexSet):
+                tableView.insertSections(indexSet, with: .automatic)
+            case let .delete(indexSet):
+                tableView.deleteSections(indexSet, with: .automatic)
+        }
+        if !updates.isEmpty {
+            tableView.reloadRows(at: updates, with: .automatic)
+        } else { /* nothing */ }
+        if !deletes.isEmpty {
+            tableView.deleteRows(at: deletes, with: .automatic)
+        } else { /* nothing */ }
+        if !inserts.isEmpty {
+            tableView.insertRows(at: inserts, with: .automatic)
+        } else { /* nothing */ }
+        tableView.endUpdates()
     }
 }
 
