@@ -1,6 +1,6 @@
 # Coconut
 
-Coconut is a set of UIKit and Foundation extensions allowed by Futura library.
+Coconut is a set of UIKit and Foundation extensions allowed by Futura library - https://github.com/miquido/futura.
 If you are looking for easy tu use reactive extensions for iOS you are in right place.
 
 ## Samples
