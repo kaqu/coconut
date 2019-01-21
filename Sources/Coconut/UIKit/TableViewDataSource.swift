@@ -127,9 +127,6 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
         let (sectionDiff, inserts, updates, deletes) = diff
         Mutex.lock(self.mtx)
         defer { Mutex.unlock(self.mtx) }
-        print("OLD:\n\(_model)\n\nNEW\n\(model)")
-        print("CHANGE\n\(diff)")
-
         guard tableView.window != nil else {
             self.modelCache = model
             return tableView.reloadData()

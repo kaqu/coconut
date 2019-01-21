@@ -8,12 +8,12 @@ extension SignalConsumerAdapter where Subject: UIView {
     /// will be replaced with new one.
     public var hidden: Signal<Bool>? {
         get {
-            return bindingCache[cacheKey("hidden")] as? Signal<Bool>
+            return loadCache(for: "hidden")
         }
         set {
             guard let inputSignal = newValue else {
-                bindingCache[cacheKey("hidden")] = nil
-                bindingCache[cacheKey("hiddenCollector")] = nil
+                cache(nil, for: "hidden")
+                cache(nil, for: "hiddenCollector")
                 return
             }
             let collector: SubscriptionCollector = .init()
@@ -23,8 +23,8 @@ extension SignalConsumerAdapter where Subject: UIView {
                     dispatchPrecondition(condition: .onQueue(.main))
                     subject?.isHidden = hidden
                 })
-            bindingCache[cacheKey("hidden")] = inputSignal
-            bindingCache[cacheKey("hiddenCollector")] = collector
+            cache(inputSignal, for: "hidden")
+            cache(collector, for: "hiddenCollector")
         }
     }
 }

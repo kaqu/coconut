@@ -8,7 +8,7 @@ extension SignalProducerAdapter where Subject: NotificationCenter {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public subscript(notificationName name: Notification.Name) -> Signal<Notification> {
-        if let signal = bindingCache[cacheKey("notificationsFor:\(name)")] as? Signal<Notification> {
+        if let signal: Signal<Notification> = loadCache(for: "notificationsFor:\(name)") {
             return signal
         } else {
             let emitter: Emitter<Notification> = .init()
@@ -22,8 +22,8 @@ extension SignalProducerAdapter where Subject: NotificationCenter {
                              selector: #selector(ClosureHolder<Notification>.invoke),
                              name: name,
                              object: nil)
-            bindingCache[cacheKey("notificationsFor:\(name)")] = emitter
-            bindingCache[cacheKey("notificationsFor:\(name) Closure")] = closureHolder
+            cache(emitter, for: "notificationsFor:\(name)")
+            cache(closureHolder, for: "notificationsFor:\(name) Closure")
             return emitter
         }
     }

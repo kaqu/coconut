@@ -8,12 +8,12 @@ extension SignalConsumerAdapter where Subject: UITextView {
     /// will be replaced with new one.
     public var text: Signal<String>? {
         get {
-            return bindingCache[cacheKey("text")] as? Signal<String>
+            return loadCache(for:"text")
         }
         set {
             guard let inputSignal = newValue else {
-                bindingCache[cacheKey("text")] = nil
-                bindingCache[cacheKey("textCollector")] = nil
+                cache(nil, for: "text")
+                cache(nil, for: "textCollector")
                 return
             }
             let collector: SubscriptionCollector = .init()
@@ -23,8 +23,8 @@ extension SignalConsumerAdapter where Subject: UITextView {
                     dispatchPrecondition(condition: .onQueue(.main))
                     subject?.text = text
                 })
-            bindingCache[cacheKey("text")] = inputSignal
-            bindingCache[cacheKey("textCollector")] = collector
+            cache(inputSignal, for: "text")
+            cache(collector, for: "textCollector")
         }
     }
 }
@@ -36,7 +36,7 @@ extension SignalProducerAdapter where Subject: UITextView {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var text: Signal<String> {
-        if let signal = bindingCache[cacheKey("textChange")] as? Signal<String> {
+        if let signal: Signal<String> = loadCache(for:"textChange") {
             return signal
         } else {
             let emitter: Emitter<String> = .init()
@@ -49,8 +49,8 @@ extension SignalProducerAdapter where Subject: UITextView {
                              selector: #selector(ClosureHolder<UITextField>.invoke),
                              name: UITextView.textDidChangeNotification,
                              object: subject)
-            bindingCache[cacheKey("textChange")] = emitter
-            bindingCache[cacheKey("textChangeClosure")] = closureHolder
+            cache(emitter, for: "textChange")
+            cache(closureHolder, for: "textChangeClosure")
             return emitter
         }
     }

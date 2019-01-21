@@ -9,7 +9,7 @@ extension SignalProducerAdapter where Subject: UIApplication {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var didFinishLaunching: Signal<Void> {
-        if let signal = bindingCache[cacheKey("didFinishLaunching")] as? Signal<Void> {
+        if let signal: Signal<Void> = loadCache(for: "didFinishLaunching") {
             return signal
         } else {
             let emitter: Emitter<Void> = .init()
@@ -22,8 +22,8 @@ extension SignalProducerAdapter where Subject: UIApplication {
                              selector: #selector(ClosureHolder<UIApplication>.invoke),
                              name: UIApplication.didFinishLaunchingNotification,
                              object: subject)
-            bindingCache[cacheKey("didFinishLaunching")] = emitter
-            bindingCache[cacheKey("didFinishLaunchingClosure")] = closureHolder
+            cache(emitter, for: "didFinishLaunching")
+            cache(closureHolder, for: "didFinishLaunchingClosure")
             return emitter
         }
     }
@@ -34,7 +34,7 @@ extension SignalProducerAdapter where Subject: UIApplication {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var willEnterForeground: Signal<Void> {
-        if let signal = bindingCache[cacheKey("willEnterForeground")] as? Signal<Void> {
+        if let signal: Signal<Void> = loadCache(for: "willEnterForeground") {
             return signal
         } else {
             let emitter: Emitter<Void> = .init()
@@ -47,8 +47,8 @@ extension SignalProducerAdapter where Subject: UIApplication {
                              selector: #selector(ClosureHolder<UIApplication>.invoke),
                              name: UIApplication.willEnterForegroundNotification,
                              object: subject)
-            bindingCache[cacheKey("willEnterForeground")] = emitter
-            bindingCache[cacheKey("willEnterForegroundClosure")] = closureHolder
+            cache(emitter, for: "willEnterForeground")
+            cache(closureHolder, for: "willEnterForegroundClosure")
             return emitter
         }
     }
@@ -59,7 +59,7 @@ extension SignalProducerAdapter where Subject: UIApplication {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var didBecomeActive: Signal<Void> {
-        if let signal = bindingCache[cacheKey("didBecomeActive")] as? Signal<Void> {
+        if let signal: Signal<Void> = loadCache(for: "didBecomeActive") {
             return signal
         } else {
             let emitter: Emitter<Void> = .init()
@@ -72,8 +72,8 @@ extension SignalProducerAdapter where Subject: UIApplication {
                              selector: #selector(ClosureHolder<UIApplication>.invoke),
                              name: UIApplication.didBecomeActiveNotification,
                              object: subject)
-            bindingCache[cacheKey("didBecomeActive")] = emitter
-            bindingCache[cacheKey("didBecomeActiveClosure")] = closureHolder
+            cache(emitter, for: "didBecomeActive")
+            cache(closureHolder, for: "didBecomeActiveClosure")
             return emitter
         }
     }
@@ -84,7 +84,7 @@ extension SignalProducerAdapter where Subject: UIApplication {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var willResignActive: Signal<Void> {
-        if let signal = bindingCache[cacheKey("willResignActive")] as? Signal<Void> {
+        if let signal: Signal<Void> = loadCache(for: "willResignActive") {
             return signal
         } else {
             let emitter: Emitter<Void> = .init()
@@ -97,8 +97,8 @@ extension SignalProducerAdapter where Subject: UIApplication {
                              selector: #selector(ClosureHolder<UIApplication>.invoke),
                              name: UIApplication.willResignActiveNotification,
                              object: subject)
-            bindingCache[cacheKey("willResignActive")] = emitter
-            bindingCache[cacheKey("willResignActiveClosure")] = closureHolder
+            cache(emitter, for: "willResignActive")
+            cache(closureHolder, for: "willResignActiveClosure")
             return emitter
         }
     }
@@ -109,7 +109,7 @@ extension SignalProducerAdapter where Subject: UIApplication {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var didEnterBackground: Signal<Void> {
-        if let signal = bindingCache[cacheKey("didEnterBackground")] as? Signal<Void> {
+        if let signal: Signal<Void> = loadCache(for: "didEnterBackground") {
             return signal
         } else {
             let emitter: Emitter<Void> = .init()
@@ -122,8 +122,8 @@ extension SignalProducerAdapter where Subject: UIApplication {
                              selector: #selector(ClosureHolder<UIApplication>.invoke),
                              name: UIApplication.didEnterBackgroundNotification,
                              object: subject)
-            bindingCache[cacheKey("didEnterBackground")] = emitter
-            bindingCache[cacheKey("didEnterBackgroundClosure")] = closureHolder
+            cache(emitter, for: "didEnterBackground")
+            cache(closureHolder, for: "didEnterBackgroundClosure")
             return emitter
         }
     }
@@ -134,7 +134,7 @@ extension SignalProducerAdapter where Subject: UIApplication {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var willTerminate: Signal<Void> {
-        if let signal = bindingCache[cacheKey("willTerminate")] as? Signal<Void> {
+        if let signal: Signal<Void> = loadCache(for: "willTerminate") {
             return signal
         } else {
             let emitter: Emitter<Void> = .init()
@@ -147,8 +147,8 @@ extension SignalProducerAdapter where Subject: UIApplication {
                              selector: #selector(ClosureHolder<UIApplication>.invoke),
                              name: UIApplication.willTerminateNotification,
                              object: subject)
-            bindingCache[cacheKey("willTerminate")] = emitter
-            bindingCache[cacheKey("willTerminateClosure")] = closureHolder
+            cache(emitter, for: "willTerminate")
+            cache(closureHolder, for: "willTerminateClosure")
             return emitter
         }
     }
@@ -159,7 +159,7 @@ extension SignalProducerAdapter where Subject: UIApplication {
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
     public var didReceiveMemoryWarning: Signal<Void> {
-        if let signal = bindingCache[cacheKey("didReceiveMemoryWarning")] as? Signal<Void> {
+        if let signal: Signal<Void> = loadCache(for: "didReceiveMemoryWarning") {
             return signal
         } else {
             let emitter: Emitter<Void> = .init()
@@ -172,8 +172,8 @@ extension SignalProducerAdapter where Subject: UIApplication {
                              selector: #selector(ClosureHolder<UIApplication>.invoke),
                              name: UIApplication.didReceiveMemoryWarningNotification,
                              object: subject)
-            bindingCache[cacheKey("didReceiveMemoryWarning")] = emitter
-            bindingCache[cacheKey("didReceiveMemoryWarningClosure")] = closureHolder
+            cache(emitter, for: "didReceiveMemoryWarning")
+            cache(closureHolder, for: "didReceiveMemoryWarningClosure")
             return emitter
         }
     }

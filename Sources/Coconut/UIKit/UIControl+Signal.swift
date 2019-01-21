@@ -8,12 +8,12 @@ extension SignalConsumerAdapter where Subject: UIControl {
     /// will be replaced with new one.
     public var interactionsEnabled: Signal<Bool>? {
         get {
-            return bindingCache[cacheKey("interactionsEnabled")] as? Signal<Bool>
+            return loadCache(for: "interactionsEnabled")
         }
         set {
             guard let inputSignal = newValue else {
-                bindingCache[cacheKey("interactionsEnabled")] = nil
-                bindingCache[cacheKey("interactionsEnabledCollector")] = nil
+                cache(nil, for: "interactionsEnabled")
+                cache(nil, for: "interactionsEnabledCollector")
                 return
             }
             let collector: SubscriptionCollector = .init()
@@ -24,8 +24,8 @@ extension SignalConsumerAdapter where Subject: UIControl {
                     subject?.isUserInteractionEnabled = interactionsEnabled
                 })
             
-            bindingCache[cacheKey("interactionsEnabled")] = inputSignal
-            bindingCache[cacheKey("interactionsEnabledCollector")] = collector
+            cache(inputSignal, for: "interactionsEnabled")
+            cache(collector, for: "interactionsEnabledCollector")
         }
     }
 }
@@ -37,12 +37,12 @@ extension SignalConsumerAdapter where Subject: UIControl {
     /// will be replaced with new one.
     public var enabled: Signal<Bool>? {
         get {
-            return bindingCache[cacheKey("enabled")] as? Signal<Bool>
+            return loadCache(for: "enabled")
         }
         set {
             guard let inputSignal = newValue else {
-                bindingCache[cacheKey("enabled")] = nil
-                bindingCache[cacheKey("enabledCollector")] = nil
+                cache(nil, for: "enabled")
+                cache(nil, for: "enabledCollector")
                 return
             }
             let collector: SubscriptionCollector = .init()
@@ -52,8 +52,30 @@ extension SignalConsumerAdapter where Subject: UIControl {
                     dispatchPrecondition(condition: .onQueue(.main))
                     subject?.isEnabled = enabled
                 })
-            bindingCache[cacheKey("enabled")] = inputSignal
-            bindingCache[cacheKey("enabledCollector")] = collector
+            cache(inputSignal, for: "enabled")
+            cache(collector, for: "enabledCollector")
+        }
+    }
+}
+
+extension SignalProducerAdapter where Subject: UIControl {
+    /// Tap (UIControl.Event.touchUpInside) output signal
+    /// This signal lifetime is corresponding to its subject - if subject becomes deallocated signal will become ended.
+    ///
+    /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
+    /// unbind while subject is still alive.
+    public var tap: Signal<Void> {
+        if let signal: Signal<Void> = loadCache(for: "tap") {
+            return signal
+        } else {
+            let emitter: Emitter<Void> = .init()
+            let closureHolder = ClosureHolder<UIButton>({ _ in
+                emitter.emit()
+            })
+            subject.addTarget(closureHolder, action: #selector(ClosureHolder<UIButton>.invoke), for: .touchUpInside)
+            cache(emitter, for: "tap")
+            cache(closureHolder, for: "tapClosure")
+            return emitter
         }
     }
 }

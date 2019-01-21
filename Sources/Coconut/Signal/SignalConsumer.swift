@@ -27,14 +27,24 @@ public extension SignalConsumer where Self: NSObject {
 
 /// SignalConsumerAdapter allows easy extending and namespacing input signals.
 public final class SignalConsumerAdapter<Subject> {
-    internal let subject: Subject
-    internal var bindingCache: [String: Any] = .init()
+    public let subject: Subject
+    private var bindingCache: [String: Any] = .init()
 
-    internal init(subject: Subject) {
+    public init(subject: Subject) {
         self.subject = subject
     }
-
-    internal func cacheKey(_ string: String) -> String {
+    
+    /// load value from local adapter cache
+    public func loadCache<T>(for key: String) -> T? {
+        return bindingCache[cacheKey(key)] as? T
+    }
+    
+    /// cache valie in local adapter cache
+    public func cache(_ any: Any?, for key: String) {
+        bindingCache[cacheKey(key)] = any
+    }
+    
+    private func cacheKey(_ string: String) -> String {
         return "\(Subject.self):\(string):Key"
     }
 }

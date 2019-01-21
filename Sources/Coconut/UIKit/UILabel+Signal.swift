@@ -8,12 +8,12 @@ extension SignalConsumerAdapter where Subject: UILabel {
     /// will be replaced with new one.
     public var text: Signal<String>? {
         get {
-            return bindingCache[cacheKey("title")] as? Signal<String>
+            return loadCache(for: "title")
         }
         set {
             guard let inputSignal = newValue else {
-                bindingCache[cacheKey("title")] = nil
-                bindingCache[cacheKey("titleCollector")] = nil
+                cache(nil, for: "title")
+                cache(nil, for: "titleCollector")
                 return
             }
             let collector: SubscriptionCollector = .init()
@@ -23,8 +23,8 @@ extension SignalConsumerAdapter where Subject: UILabel {
                     dispatchPrecondition(condition: .onQueue(.main))
                     subject?.text = text
                 })
-            bindingCache[cacheKey("title")] = inputSignal
-            bindingCache[cacheKey("titleCollector")] = collector
+            cache(inputSignal, for: "title")
+            cache(collector, for: "titleCollector")
         }
     }
 }

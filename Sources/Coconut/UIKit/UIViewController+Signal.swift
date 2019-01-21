@@ -48,12 +48,12 @@ extension UIViewController {
 
 extension SignalProducerAdapter where Subject: UIViewController {
     fileprivate var viewDidLoadEmitter: Emitter<Void> {
-        if let signal = bindingCache[cacheKey("viewDidLoad")] as? Emitter<Void> {
+        if let signal: Emitter<Void> = loadCache(for: "viewDidLoad") {
             return signal
         } else {
             _ = UIViewController.swizzle
             let emitter: Emitter<Void> = .init()
-            bindingCache[cacheKey("viewDidLoad")] = emitter
+            cache(emitter, for: "viewDidLoad")
             return emitter
         }
     }
@@ -70,12 +70,12 @@ extension SignalProducerAdapter where Subject: UIViewController {
 
 extension SignalProducerAdapter where Subject: UIViewController {
     fileprivate var viewWillAppearEmitter: Emitter<Void> {
-        if let signal = bindingCache[cacheKey("viewWillAppear")] as? Emitter<Void> {
+        if let signal: Emitter<Void> = loadCache(for: "viewWillAppear") {
             return signal
         } else {
             _ = UIViewController.swizzle
             let emitter: Emitter<Void> = .init()
-            bindingCache[cacheKey("viewWillAppear")] = emitter
+            cache(emitter, for: "viewWillAppear")
             return emitter
         }
     }
@@ -92,12 +92,12 @@ extension SignalProducerAdapter where Subject: UIViewController {
 
 extension SignalProducerAdapter where Subject: UIViewController {
     fileprivate var viewDidAppearEmitter: Emitter<Void> {
-        if let signal = bindingCache[cacheKey("viewDidAppear")] as? Emitter<Void> {
+        if let signal: Emitter<Void> = loadCache(for: "viewDidAppear") {
             return signal
         } else {
             _ = UIViewController.swizzle
             let emitter: Emitter<Void> = .init()
-            bindingCache[cacheKey("viewDidAppear")] = emitter
+            cache(emitter, for: "viewDidAppear")
             return emitter
         }
     }
@@ -114,12 +114,12 @@ extension SignalProducerAdapter where Subject: UIViewController {
 
 extension SignalProducerAdapter where Subject: UIViewController {
     fileprivate var viewWillDisappearEmitter: Emitter<Void> {
-        if let signal = bindingCache[cacheKey("viewWillDisappear")] as? Emitter<Void> {
+        if let signal: Emitter<Void> = loadCache(for: "viewWillDisappear") {
             return signal
         } else {
             _ = UIViewController.swizzle
             let emitter: Emitter<Void> = .init()
-            bindingCache[cacheKey("viewWillDisappear")] = emitter
+            cache(emitter, for: "viewWillDisappear")
             return emitter
         }
     }
@@ -136,12 +136,12 @@ extension SignalProducerAdapter where Subject: UIViewController {
 
 extension SignalProducerAdapter where Subject: UIViewController {
     fileprivate var viewDidDisappearEmitter: Emitter<Void> {
-        if let signal = bindingCache[cacheKey("viewDidDisappear")] as? Emitter<Void> {
+        if let signal: Emitter<Void> = loadCache(for: "viewDidDisappear") {
             return signal
         } else {
             _ = UIViewController.swizzle
             let emitter: Emitter<Void> = .init()
-            bindingCache[cacheKey("viewDidDisappear")] = emitter
+            cache(emitter, for: "viewDidDisappear")
             return emitter
         }
     }
