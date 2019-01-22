@@ -30,12 +30,12 @@ extension SignalConsumerAdapter where Subject: UITextView {
 }
 
 extension SignalProducerAdapter where Subject: UITextView {
-    /// Text changes (UITextView.textDidChangeNotification) signal output
+    /// Text editing changes (UITextView.textDidChangeNotification) signal output
     /// This signal lifetime is corresponding to its subject - if subject becomes deallocated signal will become ended.
     ///
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
-    public var text: Signal<String> {
+    public var textEdit: Signal<String> {
         if let signal: Signal<String> = loadCache(for:"textChange") {
             return signal
         } else {

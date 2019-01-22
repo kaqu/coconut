@@ -33,7 +33,7 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
                 }
                 return (model: newValue, diff: tableViewDiff(self.model, newValue, match: self.elementMatch))
             }
-            .switch(to: DispatchQueue.main)
+            .switch(to: OperationQueue.main)
             .value { update in
                 self.updateTableViewWith(diff: update.diff, currentModel: update.model)
             }
@@ -103,6 +103,34 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
         tableView.delegate = self
         tableView.register(reusableCellClass, forCellReuseIdentifier: reusableCellIdentifier)
         self.tableView = tableView
+    }
+
+    public func move(from: IndexPath, to: IndexPath) {
+        dispatchPrecondition(condition: .onQueue(.main))
+        guard let tableView = tableView else { return }
+        
+        Mutex.lock(mtx)
+        defer { Mutex.unlock(mtx) }
+        
+        guard _model.count > from.section, _model.count > to.section else { return }
+        guard _model[from.section].count > from.row, _model[to.section].count > to.row else { return }
+        
+        var updatedModel = _model
+        let tmp = updatedModel[from.section][from.row]
+        updatedModel[from.section].remove(at: from.row)
+        updatedModel[to.section].insert(tmp, at: to.row)
+        
+        _model = updatedModel
+        
+        guard self.tableView?.window != nil else {
+            modelCache = updatedModel
+            return tableView.reloadData()
+        }
+        
+        tableView.beginUpdates()
+        self.modelCache = updatedModel
+        tableView.moveRow(at: from, to: to)
+        tableView.endUpdates()
     }
 
     public func numberOfSections(in _: UITableView) -> Int {

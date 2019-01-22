@@ -30,12 +30,12 @@ extension SignalConsumerAdapter where Subject: UITextField {
 }
 
 extension SignalProducerAdapter where Subject: UITextField {
-    /// Text changes (UIControl.Event.editingChanged) signal output
+    /// Text editing changes (UIControl.Event.editingChanged) signal output
     /// This signal lifetime is corresponding to its subject - if subject becomes deallocated signal will become ended.
     ///
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
-    public var text: Signal<String> {
+    public var textEdit: Signal<String> {
         if let signal: Signal<String> = loadCache(for: "textChange") {
             return signal
         } else {
@@ -55,7 +55,7 @@ extension SignalProducerAdapter where Subject: UITextField {
     ///
     /// - Warning: use `collect(with:)` before adding any transformations or handlers to this signal if you need to
     /// unbind while subject is still alive.
-    public var editing: Signal<Bool> {
+    public var editingChange: Signal<Bool> {
         if let signal: Signal<Bool> = loadCache(for: "editStateChange") {
             return signal
         } else {
@@ -64,7 +64,7 @@ extension SignalProducerAdapter where Subject: UITextField {
                 emitter.emit(true)
             })
             let endClosureHolder = ClosureHolder<UITextField>({ _ in
-                emitter.emit(true)
+                emitter.emit(false)
             })
             subject.addTarget(beginClosureHolder, action: #selector(ClosureHolder<UITextField>.invoke), for: .editingDidBegin)
             subject.addTarget(endClosureHolder, action: #selector(ClosureHolder<UITextField>.invoke), for: .editingDidEnd)
