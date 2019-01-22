@@ -5,9 +5,9 @@
         "package": "Futura",
         "repositoryURL": "https://github.com/miquido/futura.git",
         "state": {
-          "branch": null,
-          "revision": "2c2e1d82c4c1e9a454c55174033cb86db9a3d8d7",
-          "version": "2.1.0"
+          "branch": "fix/flatMap",
+          "revision": "f2af975e164749227eba8ed40c0e8a1ca60bfd7b",
+          "version": null
         }
       }
     ]
