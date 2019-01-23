@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40463B8821F8EA3100CCDA95 /* Futura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40463B8721F8EA3100CCDA95 /* Futura.framework */; };
 		OBJ_100 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_105 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* Future.swift */; };
 		OBJ_106 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Promise.swift */; };
@@ -50,20 +51,10 @@
 		OBJ_88 /* UITextView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* UITextView+Signal.swift */; };
 		OBJ_89 /* UIView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* UIView+Signal.swift */; };
 		OBJ_90 /* UIViewController+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* UIViewController+Signal.swift */; };
-		OBJ_92 /* Futura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Futura::Futura::Product" /* Futura.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		40D70D1021F7AEC100C425AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "Futura::Futura";
-			remoteInfo = Futura;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		40463B8721F8EA3100CCDA95 /* Futura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Futura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Coconut::Coconut::Product" /* Coconut.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Coconut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Futura::Futura::Product" /* Futura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Futura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* NotificationCenter+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Signal.swift"; sourceTree = "<group>"; };
@@ -125,13 +116,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_92 /* Futura.framework in Frameworks */,
+				40463B8821F8EA3100CCDA95 /* Futura.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40463B8621F8EA3100CCDA95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40463B8721F8EA3100CCDA95 /* Futura.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		OBJ_12 /* Signal */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +235,7 @@
 			path = Signal;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -246,8 +245,8 @@
 				OBJ_33 /* SampleApp */,
 				OBJ_34 /* Dependencies */,
 				OBJ_65 /* Products */,
+				40463B8621F8EA3100CCDA95 /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_56 /* Synchronization */ = {
@@ -321,7 +320,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_93 /* PBXTargetDependency */,
 			);
 			name = Coconut;
 			productName = Coconut;
@@ -387,7 +385,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_65 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -473,14 +471,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		OBJ_93 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "Futura::Futura" /* Futura */;
-			targetProxy = 40D70D1021F7AEC100C425AE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		OBJ_102 /* Debug */ = {

@@ -8,8 +8,7 @@ import UIKit
 
 class ViewController: UIViewController {
     let timer: TimedEmitter = .init(interval: 3)
-    var dataSource: TableViewDataSource<String> = .init { (value) -> UITableViewCell in
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+    var dataSource: TableViewDataSource<String> = .init { (value, cell) -> UITableViewCell in
         cell.textLabel?.text = value
         return cell
     }
