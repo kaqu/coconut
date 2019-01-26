@@ -25,7 +25,7 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
             return _model
         }
         set {
-            future(on: updateQueue) { () -> Update in
+            future(on: diffWorker) { () -> Update in
                 defer {
                     Mutex.lock(self.mtx)
                     defer { Mutex.unlock(self.mtx) }
@@ -59,8 +59,7 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
 
     private var modelInputSignalCollector: SubscriptionCollector?
 
-    private let updateQueue: DispatchQueue = .init(label: "coconut.table.update.queue", qos: .userInteractive)
-
+    private let diffWorker: Worker
     private let mtx: Mutex.Pointer = Mutex.make(recursive: true)
     private var _model: Model = []
     private lazy var modelCache: Model = model
@@ -77,10 +76,12 @@ public final class TableViewDataSource<Element>: NSObject, UITableViewDelegate, 
     ///   - reusableCellClass: reusable cell class dequeued for setup from model, default is UITableViewCell
     ///   - cellBuilder: function used to transform data into cells
     public init(initialData: Model = [[]],
+                diffWorker: Worker = DispatchQueue(label: "coconut.table.update.queue", qos: .userInteractive),
                 elementMatch: @escaping (Element, Element) -> Bool,
                 reusableCellClass: AnyClass = UITableViewCell.self,
                 cellSetup: @escaping (Element, UITableViewCell) -> UITableViewCell) {
         self._model = initialData
+        self.diffWorker = diffWorker
         self.elementMatch = elementMatch
         self.reusableCellClass = reusableCellClass
         self.cellSetup = cellSetup
