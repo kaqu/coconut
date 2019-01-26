@@ -202,7 +202,7 @@
 				OBJ_59 /* Worker */,
 			);
 			name = Futura;
-			path = ".build/checkouts/futura.git-8160257967924088271/Sources/Futura";
+			path = futura/Sources/Futura;
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_37 /* Future */ = {
